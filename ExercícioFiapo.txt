@@ -1,0 +1,267 @@
+Exercício 1:
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int unidades;
+        double valorTotal;
+
+
+        Console.WriteLine("Entre com quantidade de laranjas: ");
+        unidades = int.Parse(Console.ReadLine());
+
+        if (unidades >= 12)
+        {
+
+            valorTotal = (2.00 / 12) * unidades;
+
+            Console.WriteLine("O preço a ser pago pelas laranjas será de: " + "R$ " + valorTotal.ToString("0.00"));
+
+        }
+        else
+        {
+
+            valorTotal = (2.30 / 12) * unidades;
+
+            Console.WriteLine("O preço a ser pago pelas laranjas será de: " + "R$ " + valorTotal.ToString("0.00"));
+
+        }
+    }
+}
+
+
+Exercício 2:
+
+namespace Exercicio2
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            float num1;
+            float num2;
+            float num3;
+
+            Console.WriteLine("Entre com o número 1: ");
+            num1 = float.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Entre com o número 2: ");
+            num2 = float.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Entre com o número 3: ");
+            num3 = float.Parse(Console.ReadLine());
+
+            //Ver qual o número maior
+
+            if (num1 > num2 && num1 >num3) {
+
+                Console.WriteLine("O número " + num1 + " é o maior");
+
+            } else {
+
+
+                if (num2 > num1 && num2 > num3)
+                {
+
+                    Console.WriteLine("O número " + num2 + " é o maior");
+
+                }
+                else
+                {
+
+                    if (num3 > num1 && num3 > num2)
+                    {
+
+                        Console.WriteLine("O número " + num3 + " é o maior");
+
+                    }
+
+                }
+
+
+            }
+
+            //Ver qual o número do meio
+
+            if (num1 > num2 && num1 < num3 || num1 > num3 && num1 < num2 )
+            {
+
+                Console.WriteLine("O número " + num1 + " é o do meio");
+
+            }
+            else {
+
+                if (num2 > num1 && num2 < num3 || num2 > num3 && num2 < num1)
+                {
+
+                    Console.WriteLine("O número " + num2 + " é o do meio");
+
+                }
+                else {
+
+                    if (num3 > num1 && num3 < num2 || num3 > num2 && num3 < num1) {
+
+                        Console.WriteLine("O número " + num3 + " é o do meio");
+
+                    }
+
+                }
+
+            }
+
+            //Ver qual o número menor
+
+            if (num1 < num2 && num1 < num3)
+            {
+
+                Console.WriteLine("O número " + num1 + " é o Menor");
+
+            }
+            else
+            {
+
+
+                if (num2 < num1 && num2 < num3)
+                {
+
+                    Console.WriteLine("O número " + num2 + " é o Menor");
+
+                }
+                else
+                {
+
+                    if (num3 < num1 && num3 < num2)
+                    {
+
+                        Console.WriteLine("O número " + num3 + " é o Menor");
+
+                    }
+
+                }
+
+
+            }
+
+        }
+    }
+}
+
+Exercício 3:
+
+namespace Exercicio3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double valor_vendas;
+            double salario;
+            double comissao;
+            
+
+            Console.WriteLine("Entre com o valor de vendas: ");
+            valor_vendas = double.Parse( Console.ReadLine());
+            
+            Console.WriteLine("Entre com o valor do seu sálario: ");
+            salario = double.Parse( Console.ReadLine());
+
+            if (valor_vendas > 1500)
+            {
+
+                comissao = valor_vendas * (0.05) + salario;
+
+                Console.WriteLine(" Sua comissão foi de " + comissao);
+
+            }
+            else {
+               
+                    comissao = valor_vendas * (0.03) + salario;
+                    Console.WriteLine(" Sua comissão foi de " + comissao);
+                }
+            }
+
+
+        }
+
+    }
+
+Exercício 4:
+
+namespace Exercicio4
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int ano;
+
+            Console.WriteLine("Entre com o ano desejado");
+            ano = int.Parse(Console.ReadLine());
+
+            if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0) {    // para saber se e divisível vamos usar o operador % que retorna o resto da divisão) 
+
+                Console.WriteLine("Esse ano é bissexto");
+
+            }else{
+
+                Console.WriteLine("Esse ano não é bissexto");
+
+            }
+             
+        }
+
+    }
+}
+
+Exercício 5:
+
+using System.Drawing;
+
+namespace Teste
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //declaração variáveis
+            double valorEntrada;
+            string aovivo;
+            byte diadasemana, ticket;
+
+            //entrada de dados
+            Console.WriteLine("o valor da entrada");
+            valorEntrada = double.Parse(Console.ReadLine());
+            Console.WriteLine("A quantidade de ingressos ");
+            ticket = byte.Parse(Console.ReadLine());
+            Console.WriteLine("Dia da semana \n 1 - Domingo \n 2 = Segunda \n 3 = Terça \n 4 = Quarta" +
+                "\n 5 = quinta \n 6 = sexta \n 7 = sabado");
+            diadasemana = byte.Parse(Console.ReadLine());
+            Console.WriteLine("Hoje tem show ao vivo (S) = SIM (N) = Não");
+            aovivo = Console.ReadLine();
+
+            //processamento
+            if (diadasemana == 2 || diadasemana == 3 || diadasemana == 5)
+            {
+                // valorEntrada = valorEntrada - 10;
+                valorEntrada -= 10;
+            }
+            if (aovivo.ToLower() == "s")   // tolower troca todos para minusculo
+                                           // aovivo.ToUpper()  troca todos caracteres para maiusculo
+            {
+                valorEntrada += 7.5;
+            }
+
+            //Saída
+            Console.WriteLine("O Valor total de Entrada é  : R$ " + valorEntrada * ticket);
+            Console.ReadLine();
+
+        }
+
+    }
+}
+
